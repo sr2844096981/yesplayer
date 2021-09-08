@@ -61,7 +61,12 @@ const routes = [{ path: '/', redirect: '/home' }, {
             name: 'Mv',
             component: () =>
                 import ("@/views/mv"),
-        }, ]
+        }, {
+            path: '/demo',
+            name: 'Demo',
+            component: () =>
+                import ("@/views/demo"),
+        }]
     },
 
     {

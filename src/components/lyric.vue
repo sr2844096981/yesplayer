@@ -2,7 +2,7 @@
   <div class="lyric">
     <div class="lyric-main clearfix">
       <div class="cover-box f-l">
-        <img class="cover" :src="cover" />
+        <img class="cover" :src="cover" ref="cover" />
         <div class="song-operate">
           <!-- MV -->
           <i class="el-icon-video-camera"></i>
@@ -42,6 +42,7 @@
 import { mapGetters } from "vuex";
 import { getLyric } from "@/api/lyric";
 import { randomNum } from "@/utils/randomNum";
+import { imgMainColor } from "@/utils/imgMainColor";
 export default {
   computed: {
     ...mapGetters(["songId", "songDetail", "currentTime", "songUrl"]),
@@ -95,7 +96,7 @@ export default {
       this.lyric = newLrc;
       // 修改背景
       if (document.querySelector(".lyric") === null) return false;
-      let bgcArr = [
+       let bgcArr = [
         "#5B3C35",
         "#433745",
         "#4F3F3C",
@@ -121,7 +122,8 @@ export default {
       ];
       const bgc = bgcArr[randomNum(0, bgcArr.length - 1)];
       document.querySelector(".lyric").style.backgroundColor = bgc;
-      document.querySelector(".el-footer").style.backgroundColor = bgc;
+      document.querySelector(".el-footer").style.backgroundColor = bgc; 
+      // console.log(imgMainColor(this.$refs.cover));
     },
     // 解析歌词
     analysisLrc(firsthandLyric) {

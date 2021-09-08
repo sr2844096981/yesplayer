@@ -56,6 +56,12 @@ export default {
           title: "榜单",
           path: "/ranking",
         },
+        {
+          id: 999,
+          icon: "el-icon-s-data",
+          title: "demo",
+          path: "/demo",
+        },
       ],
       // 当前激活菜单项
       activeMenu:

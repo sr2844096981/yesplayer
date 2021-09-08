@@ -12,10 +12,11 @@
     >
       您的浏览器不支持 video 标签。
     </video>
-    <h2>{{ mvInfo.artistName + " - " + mvInfo.name }}</h2>
+    <h2>{{ mvInfo.artistName + " - " + mvInfo.name }} </h2>
     <p>
-      {{ mvInfo.playCount | formatNumber }} Views ·
+      {{ mvInfo.playCount | foirmatNumber }} Views ·
       {{ mvInfo.publishTime | formatDate }}
+     <i @click="clearTime">关闭评论</i>
     </p>
     <h4>更多视频</h4>
 
@@ -26,7 +27,7 @@
         :key="item.id"
         @click="goToMvPage(item.id)"
       >
-        <img :src="item.cover + '?param=176y99'" alt="" />
+        <img :src="item.cover + '?param=176y99'"  />
         <h5 class="name text-overflow">{{ item.name }}</h5>
         <span class="ar">{{ item.artistName }}</span>
       </div>
@@ -48,7 +49,7 @@ export default {
       barrageIndex: 0,
     };
   },
-  mounted() {
+  created() {
     this.getMvUrl(this.$route.params.id);
     this.getMvDetail(this.$route.params.id);
     this.getSimiMvl(this.$route.params.id);
@@ -131,17 +132,28 @@ export default {
     this.getSimiMvl(to.params.id);
     this.getCommentMV(this.$route.params.id);
   },
+  destroyed() {
+    // 页面销毁时清除定时器
+    this.clearTime();
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 h2 {
-  margin-top: 12px;
+  margin-top: 12px;  
 }
 p {
   font-size: 12px;
   opacity: 0.68;
   margin-top: 12px;
+  i{
+    margin-left: 20px;
+    font-size: 12px;
+    color:$base_text_color;
+    cursor: pointer;
+  }
+  
 }
 h4 {
   margin: 40px 0 12px;
