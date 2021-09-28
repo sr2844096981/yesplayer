@@ -1,0 +1,10 @@
+// Collapse 折叠面板 标题单行显示
+.el-collapse-item__header {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// 分页器背景色
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #F56C6C!important;
+}

@@ -1,0 +1,106 @@
+/* @import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './sidebar.scss'; */
+
+@import './element-ui.scss';
+@import './common.scss';
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /*滚动条背景颜色*/
+    /*background-color: rgba(0, 163, 245, 0.4);*/
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #CFCFCF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    // box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #B5B5B5;
+}
+
+// main-container global css
+.app-container {
+    padding: 20px;
+}
